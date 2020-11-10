@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+<style>
+.login{
+top: 20%;
+}
+</style>
+</head>
+
+<body>
+ <div class="login">
+	<h1>Grade Prediction</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('y_predict')}}"method="post">
+	
+		</select>
+    	
+    	<input type="text" name="gender" placeholder="Gender(0-->Female 1-->Male)" required="required" />
+        <input type="text" name="parental level of education" placeholder="Parental level of education" required="required" />
+        <input type="text" name="lunch" placeholder="Lunch(1-->Standard,0-->Free)" required="required" />
+        <input type="text" name="test preparation course(0-->Completed,1-->None)" placeholder="Test Preparation Course" required="required" />
+        <input type="text" name="math score" placeholder="Math Score" required="required" />
+        <input type="text" name="reading score" placeholder="Reading Score" required="required" />
+        <input type="text" name="writing score" placeholder="Writing Score" required="required" />
+        <input type="text" name="Math_PassStatus" placeholder="Math Pass Status" required="required" />
+        <input type="text" name="Reading_PassStatus	" placeholder="Reading Pass Status" required="required" />
+        <input type="text" name="Writing_PassStatus" placeholder="Writing Pass Status" required="required" />
+        <input type="text" name="OverAll_PassStatus" placeholder="OverAll PassStatus" required="required" />
+        <input type="text" name="Total_Marks" placeholder="Total Marks" required="required" />
+        <input type="text" name="Percentage" placeholder="Percentage" required="required" /> 
+        
+        
+        
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
+
